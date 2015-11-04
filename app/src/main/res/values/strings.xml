@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TODO List</string>
+    <string name="addTaskButton">Add task</string>
+    <string name="doneButton">Done</string>
+    <string name="submitTaskButton">Add task</string>
+    <string name="enterText">Enter here</string>
+</resources>
