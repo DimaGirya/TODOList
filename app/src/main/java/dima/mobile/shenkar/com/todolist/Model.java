@@ -14,8 +14,7 @@ public class Model implements iModel {
     private List<String> taskList;
     public Model(Context context) {
         this.context =  context;
-     String [] tasks = new String[]{"Hw android","Hw Linux","Hw Web","Hw sql","Hw networking","Go sleep","Get Milk",
-             "Clean my house", "Find a job",""};
+     String [] tasks = new String[]{"Hw android","Hw Linux","Hw Web","Hw sql","Hw networking","Go sleep","Get Milk", "Clean my house", "Find a job","Extra task 1","Extra task 2","Extra task 3","Extra task 4","Extra task 5","Extra task 6","Extra task 7","Extra task 8"};
         taskList = new ArrayList<String>();
         for(int i = 0; i< tasks.length;i++){
             taskList.add(tasks[i]);
