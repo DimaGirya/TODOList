@@ -27,7 +27,7 @@ public class AddTaskActivity extends Activity implements View.OnClickListener{
     public void onClick(View v) {
         String newTask = textView.getText().toString();
         Intent returnIntent = new Intent();
-       returnIntent.putExtra("result",newTask);
+         returnIntent.putExtra("result",newTask);
         setResult(Activity.RESULT_OK,returnIntent);
         finish();
     }

@@ -3,7 +3,7 @@ package dima.mobile.shenkar.com.todolist.app.logic;
 /**
  * Created by Girya on 11/20/2015.
  */
-public class Task {
+public class Task  {
 
     private String taskStr;
     private boolean done;
@@ -20,5 +20,6 @@ public class Task {
     public void setTaskStr(String taskStr) {
         this.taskStr = taskStr;
     }
+
 
 }

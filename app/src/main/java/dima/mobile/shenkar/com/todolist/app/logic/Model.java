@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by Girya on 11/4/2015.
  */
-public class Model implements iModel {
+public class Model  {
     Context context;
     private List<Task> taskList;
     public Model(Context context) {
@@ -25,19 +25,19 @@ public class Model implements iModel {
  //       java.util.Collections.sort(taskList);
     }
 
-    @Override
+
     public List<Task> getList() {
 
         return taskList;
     }
 
-    @Override
+
     public void addToList(Task task) {
         taskList.add(task);
       //  java.util.Collections.sort(taskList);
     }
 
-    @Override
+
     public void deleteFromList(String task) {
         for(int i=0;i<taskList.size();i++)
         {
@@ -50,7 +50,7 @@ public class Model implements iModel {
        // java.util.Collections.sort(taskList);
     }
 
-    @Override
+
     public void updateElmList(Task task) {    // not ready?
 
     }
