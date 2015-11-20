@@ -1,4 +1,4 @@
-package dima.mobile.shenkar.com.todolist;
+package dima.mobile.shenkar.com.todolist.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import dima.mobile.shenkar.com.todolist.R;
 
 
 public class AddTaskActivity extends Activity implements View.OnClickListener{

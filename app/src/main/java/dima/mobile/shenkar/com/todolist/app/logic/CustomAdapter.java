@@ -1,4 +1,4 @@
-package dima.mobile.shenkar.com.todolist;
+package dima.mobile.shenkar.com.todolist.app.logic;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,14 +10,16 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import dima.mobile.shenkar.com.todolist.R;
+
 /**
  * Created by Girya on 11/4/2015.
  */
 public class CustomAdapter extends BaseAdapter {
     private Context context;
-    private List<String> items;
+    private List<Task> items;
 
-    public CustomAdapter(Context context, List<String> items) {
+    public CustomAdapter(Context context, List<Task> items) {
         this.context = context;
         this.items = items;
     }
@@ -51,7 +53,7 @@ public class CustomAdapter extends BaseAdapter {
         {
             viewRow = (ViewRow) convertView.getTag();
         }
-        viewRow.textView.setText(items.get(position));
+        viewRow.textView.setText(items.get(position).getTaskStr());
         return convertView;
         }
 

@@ -1,4 +1,4 @@
-package dima.mobile.shenkar.com.todolist;
+package dima.mobile.shenkar.com.todolist.app.logic;
 
 import android.content.Context;
 
@@ -16,7 +16,7 @@ public class Controller implements IController {
     }
 
     @Override
-    public void addTask(String task) {
+    public void addTask(Task task) {
         data.addToList(task);
     }
 
@@ -26,12 +26,12 @@ public class Controller implements IController {
     }
 
     @Override
-    public void updateTask(String task) {
+    public void updateTask(Task task) {
     data.updateElmList(task);
     }
 
     @Override
-    public List<String> getList() {
+    public List<Task> getList() {
         return data.getList();
     }
 }

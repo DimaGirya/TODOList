@@ -1,4 +1,4 @@
-package dima.mobile.shenkar.com.todolist;
+package dima.mobile.shenkar.com.todolist.app.logic;
 
 import android.widget.Button;
 import android.widget.TextView;

@@ -1,15 +1,19 @@
-package dima.mobile.shenkar.com.todolist;
+package dima.mobile.shenkar.com.todolist.activity;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import dima.mobile.shenkar.com.todolist.app.logic.Controller;
+import dima.mobile.shenkar.com.todolist.app.logic.CustomAdapter;
+import dima.mobile.shenkar.com.todolist.app.logic.IController;
+import dima.mobile.shenkar.com.todolist.R;
+import dima.mobile.shenkar.com.todolist.app.logic.Task;
 
 public class MainActivity extends Activity {
     private IController controller;
@@ -40,7 +44,8 @@ public class MainActivity extends Activity {
    if(requestCode == REQUEST_CREATE_TASK){
     if(resultCode==Activity.RESULT_OK){
         String result=data.getStringExtra("result");
-        controller.addTask(result);
+        Task task = new Task(result);
+        controller.addTask(task);
         adapter.notifyDataSetChanged();
     }
        else {
