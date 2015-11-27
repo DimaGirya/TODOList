@@ -60,7 +60,7 @@ public class DataAccess implements iDataAccess {
     }
 
     @Override
-    public void deleteTask(String task) {   // need to change to Task task
+    public void deleteTask(String task) {
          database = null;
         try {
             database = dbHelper.getReadableDatabase();

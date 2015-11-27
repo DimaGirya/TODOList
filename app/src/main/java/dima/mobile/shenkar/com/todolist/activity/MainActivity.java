@@ -9,6 +9,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import dima.mobile.shenkar.com.todolist.app.logic.Controller;
 import dima.mobile.shenkar.com.todolist.sql.iDataAccess;
 import dima.mobile.shenkar.com.todolist.app.logic.CustomAdapter;
 import dima.mobile.shenkar.com.todolist.app.logic.IController;
@@ -17,7 +18,7 @@ import dima.mobile.shenkar.com.todolist.app.logic.Task;
 import dima.mobile.shenkar.com.todolist.sql.DataAccess;
 
 public class MainActivity extends Activity {
-    private iDataAccess controller;
+    private Controller controller;
     private CustomAdapter adapter;
     private Button createTaskButton;
     private Button doneButton;
@@ -27,11 +28,11 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        controller =  DataAccess.getInstatnce(this);
+        controller =  new Controller(this);
         createTaskButton = (Button) findViewById(R.id.addTaskButton);
         listView = (ListView) findViewById(R.id.listTask);
         doneButton = (Button) findViewById(R.id.doneButton);
-        adapter = new CustomAdapter(this, controller.getList());
+        adapter = new CustomAdapter(this, controller.getList(),controller.getDataAccess());
         listView.setAdapter(adapter);
     }
 
@@ -48,11 +49,7 @@ public class MainActivity extends Activity {
         Toast.makeText(this,"Task added: "+result, Toast.LENGTH_SHORT).show();
         Task task = new Task(result);
         controller.addTask(task);
-        adapter.notifyDataSetChanged(); // not work?
-        //tempory soluction
-        Intent intent = getIntent();
-        finish();
-        startActivity(intent);
+        adapter.notifyDataSetChanged();
     }
        else {
         Toast.makeText(this,"Task not added", Toast.LENGTH_SHORT).show();
@@ -68,9 +65,5 @@ public class MainActivity extends Activity {
         TextView taskDone = (TextView)view.findViewById(R.id.taskText);
         controller.deleteTask(taskDone.getText().toString());
         adapter.notifyDataSetChanged();
-        //tempory soluction
-        Intent intent = getIntent();
-        finish();
-        startActivity(intent);
     }
 }

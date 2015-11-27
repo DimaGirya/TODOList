@@ -11,6 +11,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import dima.mobile.shenkar.com.todolist.R;
+import dima.mobile.shenkar.com.todolist.sql.iDataAccess;
 
 /**
  * Created by Girya on 11/4/2015.
@@ -18,10 +19,17 @@ import dima.mobile.shenkar.com.todolist.R;
 public class CustomAdapter extends BaseAdapter {
     private Context context;
     private List<Task> items;
-
-    public CustomAdapter(Context context, List<Task> items) {
+    private iDataAccess dataAccess;
+    public CustomAdapter(Context context, List<Task> items,iDataAccess dataAccess) {
         this.context = context;
         this.items = items;
+        this.dataAccess = dataAccess;
+    }
+
+    @Override
+    public void notifyDataSetChanged() {
+        super.notifyDataSetChanged();
+        items = dataAccess.getList();
     }
 
     @Override
