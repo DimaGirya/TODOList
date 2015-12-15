@@ -11,19 +11,63 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:hint="Enter Here"
+        android:hint="@string/textAddTask"
         android:id="@+id/textAddTask"
         android:textColorHint="@color/colorPrimary"
+        android:layout_marginTop="81dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="82dp" />
+        android:layout_alignLeft="@+id/button"
+        android:layout_alignStart="@+id/button" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/submitTaskButton"
         android:id="@+id/submitTaskButton"
+        android:onClick="onClickSubmitTaskButton"
+        android:layout_below="@+id/dataSetField"
+        android:layout_alignLeft="@+id/dataSetField"
+        android:layout_alignStart="@+id/dataSetField" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/setTime"
+        android:id="@+id/button"
+        android:onClick="setTime"
+        android:layout_alignTop="@+id/button2"
+        android:layout_alignLeft="@+id/timeSetField"
+        android:layout_alignStart="@+id/timeSetField" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/setData"
+        android:id="@+id/button2"
+        android:onClick="setData"
         android:layout_below="@+id/textAddTask"
+        android:layout_toRightOf="@+id/button"
+        android:layout_toEndOf="@+id/button" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="time"
+        android:ems="10"
+        android:id="@+id/timeSetField"
+        android:layout_below="@+id/button"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="68dp" />
+        android:text="@string/noTimeSet" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/dataSetField"
+        android:text="@string/dataSetField"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/timeSetField"
+        android:layout_alignStart="@+id/timeSetField" />
+
 </RelativeLayout>

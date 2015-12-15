@@ -45,9 +45,11 @@ public class MainActivity extends Activity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
    if(requestCode == REQUEST_CREATE_TASK){
     if(resultCode==Activity.RESULT_OK){
-        String result=data.getStringExtra("result");
-        Toast.makeText(this,"Task added: "+result, Toast.LENGTH_SHORT).show();
-        Task task = new Task(result);
+        String textTask=data.getStringExtra("textTask");
+        String timeTask=data.getStringExtra("timeTask");
+        String dataTask=data.getStringExtra("dataTask");
+        Toast.makeText(this,"Task added: "+textTask+" Data:"+dataTask+" Time: "+timeTask, Toast.LENGTH_SHORT).show();
+        Task task = new Task(textTask);
         controller.addTask(task);
         adapter.notifyDataSetChanged();
     }

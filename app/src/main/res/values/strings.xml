@@ -4,4 +4,9 @@
     <string name="doneButton">Done</string>
     <string name="submitTaskButton">Add task</string>
     <string name="enterText">Enter here</string>
+    <string name="setTime">Set time</string>
+    <string name="setData">SET DATA</string>
+    <string name="textAddTask">Enter Here</string>
+    <string name="noTimeSet">No time set</string>
+    <string name="dataSetField">No data set</string>
 </resources>
